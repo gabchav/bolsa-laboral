@@ -23,16 +23,14 @@
         <td><%= oferta.cant_vacantes %></td>
         <td>Entre $<%= oferta.salario_min %> a $<%= oferta.salario_max %> CLP.</td>
         <td><%= oferta.fecha_inicio %></td>
-        <td><%= collection_select(:oferta, :modalidad_id, Modalidad.all, :id, :nombre, prompt: true) %></td>
-		
-        <% if persona_signed_in? %>
-        <td><%= link_to "Ver", oferta, class: "btn btn-outline-dark" %></td>
-        <% end
-           if empresa_signed_in? %>
+        <td><%= oferta.modalidad %></td>
+        <% if empresa_signed_in? %>
         <td><%= link_to "Ver", oferta, class: "btn btn-outline-dark" %></td>
         <td><%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-outline-dark" %></td>
         <td><%= link_to "Eliminar", oferta, method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-outline-dark" %></td>
-        <% end %>
+        <% else %>
+		<td><%= link_to "Ver", oferta, class: "btn btn-outline-dark" %></td>
+		<% end %>
       </tr>
     <% end %>
   </tbody>
