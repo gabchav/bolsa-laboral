@@ -23,7 +23,8 @@
         <td><%= oferta.cant_vacantes %></td>
         <td>Entre $<%= oferta.salario_min %> a $<%= oferta.salario_max %> CLP.</td>
         <td><%= oferta.fecha_inicio %></td>
-        <td><%= collection_select(:ofertas, :modalidad_id, Modalidad.all, :id, :nombre, prompt: true),{ class: "form-control", :disabled => "disabled" } %></td>
+        <td><%= collection_select(:ofertas, :modalidad_id, Modalidad.all, :id, :nombre, prompt: true,{ class: "form-control", :disabled => "disabled" }) %></td>
+		<%= collection_select(:ofertas, :modalidad_id, Modalidad.all, :id, :nombre, prompt: true) %>
         <% if persona_signed_in? %>
         <td><%= link_to "Ver", oferta, class: "btn btn-outline-dark" %></td>
         <% end
