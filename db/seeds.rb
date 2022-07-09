@@ -10,7 +10,7 @@ Genero.create([
   { nombre: "Prefiero no especificarlo" },
 ])
 
-modalidad.create([
+Modalidad.create([
   { nombre: "Remoto" },
   { nombre: "Mixto" },
   { nombre: "Presencial" },
