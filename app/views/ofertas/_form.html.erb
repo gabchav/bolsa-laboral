@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+<%= form_with(model: oferta) do |form| %>
+  <% if oferta.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(oferta.errors.count, "error") %> prohibited this oferta from being saved:</h2>
+
+      <ul>
+        <% oferta.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cargo %>
+    <%= form.text_field :cargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descripción %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Vacantes %>
+    <%= form.number_field :cant_vacantes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salario_mínimo %>
+    <%= form.number_field :salario_min %>
+  </div>
+
+  <div class="field">
+    <%= form.label :salario_máximo %>
+    <%= form.number_field :salario_max %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_inicio %>
+    <%= form.datetime_select :fecha_inicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modalidad %>
+    <%= collection_select(:ofertas, :modalidad_id, Modalidad.all, :id, :nombre, prompt: true) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :región %>
+    <%= collection_select(:ofertas, :region_id, Region.all, :id, :nombre, prompt: true) %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+        </div>
+    </div>
+</div>

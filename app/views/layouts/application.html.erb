@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OfertaLaboral</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_pack_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if empresa_signed_in? %>
+            <div>
+                <p>Bienvenido <%= current_empresa.email %>!!</p>
+                <%= link_to "Cerrar Sesión", destroy_empresa_session_path, method: :delete, class: "btn btn-outline-dark" %>
+            </div>
+        <% elsif persona_signed_in? %>
+            <div>
+                <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Cerrar Sesión", destroy_persona_session_path, method: :delete, class: "btn btn-outline-dark" %>
+            </div>
+        <% else %>
+        <div>
+                <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Registar Empresa", new_empresa_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Registar Persona", new_persona_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Log in Empresa", new_empresa_session_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Log in Persona", new_persona_session_path, class: "btn btn-outline-dark" %>
+            </div>
+        <% end %>
+    <%= yield %>
+  </body>
+</html>

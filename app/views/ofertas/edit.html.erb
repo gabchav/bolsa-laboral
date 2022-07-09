@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+<br>
+<h1>Editando Oferta: <%= @ofertum.cargo.upcase %></h1>
+
+<%= render "form", oferta: @oferta %>
+<br>
+<%= link_to "Ver", @oferta, class: "btn btn-outline-dark" %> 
+<%= link_to "Volver", ofertas_path, class: "btn btn-outline-dark" %>
+        </div>
+    </div>
+</div>

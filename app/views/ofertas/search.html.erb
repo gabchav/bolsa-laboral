@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+<br>
+  <%= form_with url: "/ofertas/search", method: :get do |form| %>
+        <%= form.label :query, "Buscar Ofertas Laborales:" %>
+        <%= form.text_field :query %>
+        <%= form.submit "Buscar" %>
+    <% end %>
+
+    <% if @search %>
+
+    <p>
+        <strong>Cargo:</strong>
+        <%= @search.cargo %>
+    </p>
+
+    <p>
+        <strong>Descripción:</strong>
+        <%= @search.descripcion %>
+    </p>
+
+    <p>
+        <strong>Vacantes:</strong>
+        <%= @search.cant_vacantes %>
+    </p>
+
+    <p>
+        <strong>Salario:</strong>
+        Entre $<%= @search.salario_min %> a $<%= @search.salario_max %> CLP.
+    </p>
+
+    <p>
+        <strong>Fecha de Inicio:</strong>
+        <%= @search.fecha_inicio %>
+    </p>
+    <% else %>
+    <%= "***Ningun dato encontrado***" %>
+    <% end %>
+
+    <%= link_to "Volver", ofertas_path, class: "btn btn-outline-dark" %>
+
+        </div>
+    </div>
+</div>
