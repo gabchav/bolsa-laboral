@@ -7,7 +7,7 @@ one:
   salario_min: 1
   salario_max: 1
   fecha_inicio: 2022-07-09 01:38:57
-  modalidad: MyText
+  modalidad: 1
 
 two:
   cargo: MyString
@@ -16,4 +16,4 @@ two:
   salario_min: 1
   salario_max: 1
   fecha_inicio: 2022-07-09 01:38:57
-  modalidad: MyText
+  modalidad: 1

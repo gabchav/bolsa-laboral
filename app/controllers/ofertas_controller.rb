@@ -4,7 +4,7 @@ class OfertasController < ApplicationController
 
   # GET /ofertas or /ofertas.json
   def index
-    @ofertas = Oferta.order(:cargo).page(params[:page]).per(2)
+    @ofertas = Oferta.order(:cargo).page(params[:page]).per(4)
   end
 
   # GET /ofertas/1 or /ofertas/1.json
@@ -71,6 +71,6 @@ class OfertasController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def oferta_params
-    params.require(:oferta).permit(:cargo, :descripcion, :cant_vacantes, :salario_min, :salario_max, :fecha_inicio, :modalidad)
+    params.require(:oferta).permit(:cargo, :descripcion, :cant_vacantes, :salario_min, :salario_max, :fecha_inicio, :modalidad_id, :region_id)
   end
 end

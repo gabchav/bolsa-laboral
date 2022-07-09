@@ -34,7 +34,7 @@
 
 <p>
   <strong>Modalidad:</strong>
-  <%= @oferta.modalidad %>
+  <%= @oferta.modalidad_id %>
 </p>
 <% if empresa_signed_in? %> 
 <%= link_to "Editar", edit_oferta_path(@oferta) %>
