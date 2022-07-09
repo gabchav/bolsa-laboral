@@ -67,7 +67,7 @@ Persona.create(
       password: 123456,
       nombre: "Usuario1",
       fnac: "1988-04-25",
-      genero: "Femenino",
+      genero: 2,
       telefono: 888888888,
       curriculum: "cv.pdf",
     },
@@ -77,7 +77,7 @@ Persona.create(
       password: 123456,
       nombre: "Usuario2",
       fnac: "1998-04-05",
-      genero: "Masculino",
+      genero: Genero.find_by(nombre: 'Masculino'),
       telefono: 888888888,
       curriculum: "cv.docx",
     },
@@ -93,7 +93,9 @@ Persona.create(
         cant_vacantes: 20,
         salario_min: 1100000,
         salario_max: 1500000,
-        fecha_inicio: "2022-06-30 17:55:01",
+		modalidad: 2,
+		region: 11,
+        fecha_inicio: "2022-07-04 17:55:01",
       },
       {
         cargo: "Informático",
@@ -101,7 +103,9 @@ Persona.create(
         cant_vacantes: 6,
         salario_min: 800000,
         salario_max: 900000,
-        fecha_inicio: "2022-06-30 17:55:01",
+		modalidad: 3,
+		region: 11,
+        fecha_inicio: "2022-07-03 17:55:01",
       },
       {
         cargo: "Maquetador Web Angular",
@@ -109,7 +113,9 @@ Persona.create(
         cant_vacantes: 6,
         salario_min: 600000,
         salario_max: 50000,
-        fecha_inicio: "2022-06-30 17:55:01",
+		modalidad: 1,
+		region: 11,
+        fecha_inicio: "2022-07-02 17:55:01",
       },
       {
         cargo: "Técnico de Apoyo",
@@ -117,7 +123,9 @@ Persona.create(
         cant_vacantes: 8,
         salario_min: 500000,
         salario_max: 700000,
-        fecha_inicio: "2022-06-30 17:55:01",
+		modalidad: 2,
+		region: 11,
+        fecha_inicio: "2022-07-01 17:55:01",
       }
 
     ]
@@ -132,6 +140,8 @@ Persona.create(
         cant_vacantes: 5,
         salario_min: 350000,
         salario_max: 550000,
+		modalidad: 2,
+		region: 11,
         fecha_inicio: "2022-06-30 17:55:01",
       },
 
