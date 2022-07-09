@@ -1,5 +1,7 @@
-# bolsa-master
- 
+Ver en Linea (Heroku): https://bolsa-laboral.herokuapp.com/
+
+Datos para Iniciar Sesión:
+
 # Login Personas
 
       email: "usuario@dos.cl",
