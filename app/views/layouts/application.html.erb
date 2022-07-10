@@ -14,19 +14,21 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if empresa_signed_in? %>
-            <div>
-                <p>Bienvenido <%= current_empresa.email %>!!</p>
+            <div style="text-align:right">
+                <p>Bienvenido <%= current_empresa.representante.upcase %>!!</p>
+                <%= link_to "Nueva Oferta", new_oferta_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Cerrar Sesión", destroy_empresa_session_path, method: :delete, class: "btn btn-outline-dark" %>
             </div>
         <% elsif persona_signed_in? %>
-            <div>
+            <div style="text-align:right">
                 <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Cerrar Sesión", destroy_persona_session_path, method: :delete, class: "btn btn-outline-dark" %>
             </div>
         <% else %>
-        <div>
+        <div style="text-align:right">
                 <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Buscar", search_ofertas_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Registar Empresa", new_empresa_registration_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Registar Persona", new_persona_registration_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Login Empresa", new_empresa_session_path, class: "btn btn-outline-dark" %>

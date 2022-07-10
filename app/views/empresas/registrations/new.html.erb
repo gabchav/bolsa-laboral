@@ -13,6 +13,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
     <%= f.label :razon_social %><br />
     <%= f.text_field :razon_social, autofocus: true, autocomplete: "Razón Social" %>
   </div>
