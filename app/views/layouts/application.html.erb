@@ -22,7 +22,7 @@
             </div>
         <% elsif persona_signed_in? %>
             <div style="text-align:right">
-                <p>Bienvenid@ <%= current_persona.nombre.upcase %>!!</p>
+                <p>Bienvenid@ !!</p>
                 <%= link_to "Ver Ofertas Laborales", root_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Mi Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Mis Postulaciones", postuladas_ofertas_path, class: "btn btn-outline-dark" %> 
