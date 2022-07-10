@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 2022_07_09_080429) do
     t.integer "salario_min"
     t.integer "salario_max"
     t.datetime "fecha_inicio"
-    t.integer "modalidad_id"
+    t.string "modalidad_trabajo"
     t.bigint "empresa_id", default: 1, null: false
     t.bigint "region_id", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
@@ -102,7 +102,7 @@ ActiveRecord::Schema.define(version: 2022_07_09_080429) do
     t.datetime "fnac"
     t.integer "genero_id", default: 1
     t.integer "telefono"
-    t.boolean "curriculum", default: false
+    t.string "curriculum", default: "f"
     t.index ["email"], name: "index_personas_on_email", unique: true
     t.index ["reset_password_token"], name: "index_personas_on_reset_password_token", unique: true
     t.index ["rut"], name: "index_personas_on_rut", unique: true

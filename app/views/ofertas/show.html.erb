@@ -2,49 +2,49 @@
     <div class="row">
         <div class="col-6">
 
-<p id="notice"><%= notice %></p>
+          <p id="notice"><%= notice %></p>
 
-<h2>CARGO DE: <%= @oferta.cargo.upcase %> </h2>
-<br>
+          <h2>CARGO DE: <%= @oferta.cargo.upcase %> </h2>
+          <br>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @oferta.descripcion %>
-</p>
+          <p>
+            <strong>Descripcion:</strong>
+            <%= @oferta.descripcion %>
+          </p>
 
-<p>
-  <strong>Cant vacantes:</strong>
-  <%= @oferta.cant_vacantes %>
-</p>
+          <p>
+            <strong>Cant vacantes:</strong>
+            <%= @oferta.cant_vacantes %>
+          </p>
 
-<p>
-  <strong>Salario min:</strong>
-  <%= @oferta.salario_min %>
-</p>
+          <p>
+            <strong>Salario min:</strong>
+            <%= @oferta.salario_min %>
+          </p>
 
-<p>
-  <strong>Salario max:</strong>
-  <%= @oferta.salario_max %>
-</p>
+          <p>
+            <strong>Salario max:</strong>
+            <%= @oferta.salario_max %>
+          </p>
 
-<p>
-  <strong>Fecha inicio:</strong>
-  <%= @oferta.fecha_inicio %>
-</p>
+          <p>
+            <strong>Fecha inicio:</strong>
+            <%= @oferta.fecha_inicio %>
+          </p>
 
-<p>
-  <strong>Modalidad:</strong>
-  <%= @oferta.modalidad_id %>
-</p>
-<% if empresa_signed_in? %> 
-<%= link_to "Editar", edit_oferta_path(@oferta) %>
-  |
-<% end %> 
-<% if persona_signed_in? %> 
-  <%= link_to "Postular", "javascript:(alert('Postulado Satisfactoriamente'))", class: "btn btn-outline-dark" %>
-  |
-<% end %> 
-<%= link_to "Volver", ofertas_path, class: "btn btn-outline-dark" %>
+          <p>
+            <strong>Modalidad:</strong>
+            <%= @oferta.modalidad_trabajo %>
+          </p>
+          <% if empresa_signed_in? %> 
+              <%= link_to "Editar", edit_oferta_path(@oferta), class: "btn btn-outline-dark" %>
+            
+          <% end %> 
+              <% if persona_signed_in? %> 
+              <%= link_to "Postular", "javascript:(alert('Postulado Satisfactoriamente'))", class: "btn btn-outline-dark" %>
+            
+          <% end %> 
+          <%= link_to "Volver", ofertas_path, class: "btn btn-outline-dark" %>
 
         </div>
     </div>

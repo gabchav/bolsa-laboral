@@ -13,53 +13,61 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
+<% end %>
 
-  <div class="field">
-    <%= form.label :cargo %>
-    <%= form.text_field :cargo %>
-  </div>
+        <br>
+        <div class="field">
+          <%= form.label :cargo %>
+          <%= form.text_field :cargo %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :descripción %>
-    <%= form.text_area :descripcion %>
-  </div>
+        <div class="field">
+          <%= form.label :descripción %>
+          <%= form.text_area :descripcion, :rows=>2, :cols=>50  %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :Vacantes %>
-    <%= form.number_field :cant_vacantes %>
-  </div>
+        <div class="field">
+          <%= form.label :Vacantes %>
+          <%= form.number_field :cant_vacantes %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :salario_mínimo %>
-    <%= form.number_field :salario_min %>
-  </div>
+        <div class="field">
+          <%= form.label :salario_mínimo %>
+          <%= form.number_field :salario_min %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :salario_máximo %>
-    <%= form.number_field :salario_max %>
-  </div>
+        <div class="field">
+          <%= form.label :salario_máximo %>
+          <%= form.number_field :salario_max %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :fecha_inicio %>
-    <%= form.datetime_select :fecha_inicio %>
-  </div>
+        <div class="field">
+          <%= form.label :fecha_inicio %>
+          <%= form.datetime_select :fecha_inicio %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :modalidad %>
-    <%= collection_select(:ofertas, :modalidad_id, Modalidad.all, :id, :nombre, prompt: true) %>
-  </div>
+        <div class="field">
+          <%= form.label :modalidad_trabajo %>
+          <%= collection_select(:ofertas, :modalidad_trabajo, Modalidad.all, :nombre, :nombre, prompt: true) %>
+        </div>
+        <br>
 
-  <div class="field">
-    <%= form.label :región %>
-    <%= collection_select(:ofertas, :region_id, Region.all, :id, :nombre, prompt: true) %>
-  </div>
+        <div class="field">
+          <%= form.label :región %>
+          <%= collection_select(:ofertas, :region_id, Region.all, :id, :nombre, prompt: true) %>
+        </div>
+        <br>
 
-  
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+        <div class="actions">
+          <%= form.submit %>
+        </div>
 <% end %>
 
         </div>

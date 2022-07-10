@@ -1,5 +1,5 @@
 class OfertasController < ApplicationController
-  before_action :authenticate_empresa!, except: %i[index show search]
+  before_action :authenticate_empresa!, except: %i[index show search postuladas]
   before_action :set_oferta, only: %i[ show edit update destroy ]
 
   # GET /ofertas or /ofertas.json
@@ -14,6 +14,10 @@ class OfertasController < ApplicationController
   # GET /ofertas/new
   def new
     @oferta = Oferta.new
+  end
+  
+  def postuladas
+    @postula = Oferta.find_by("cargo LIKE ?", "%#{params[:query]}%")
   end
 
   def search
@@ -71,6 +75,6 @@ class OfertasController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def oferta_params
-    params.require(:oferta).permit(:cargo, :descripcion, :cant_vacantes, :salario_min, :salario_max, :fecha_inicio, :modalidad_id, :region_id)
+    params.require(:oferta).permit(:cargo, :descripcion, :cant_vacantes, :salario_min, :salario_max, :fecha_inicio, :modalidad, :region_id)
   end
 end

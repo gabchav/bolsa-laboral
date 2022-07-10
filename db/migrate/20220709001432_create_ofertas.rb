@@ -7,7 +7,7 @@ class CreateOfertas < ActiveRecord::Migration[6.1]
       t.integer :salario_min
       t.integer :salario_max
       t.datetime :fecha_inicio
-      t.integer :modalidad_id
+      t.string :modalidad_trabajo
       t.references :empresa, null: false, foreign_key: true, default: 1
       t.references :region, null: false, foreign_key: true, default: 1
       t.timestamps

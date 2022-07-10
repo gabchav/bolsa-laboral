@@ -85,6 +85,7 @@ Persona.create(
   ]
 )
 
+5.times do
   Oferta.create(
     [
       {
@@ -93,8 +94,8 @@ Persona.create(
         cant_vacantes: 20,
         salario_min: 1100000,
         salario_max: 1500000,
-		modalidad_id: 2,
-		region_id: 11,
+		    modalidad_trabajo: "Mixto",
+		    region_id: 11,
         fecha_inicio: "2022-07-04 17:55:01",
       },
       {
@@ -103,9 +104,9 @@ Persona.create(
         cant_vacantes: 6,
         salario_min: 800000,
         salario_max: 900000,
-		modalidad_id: 3,
-		region_id: 11,
-        fecha_inicio: "2022-07-03 17:55:01",
+        modalidad_trabajo: "Presencial",
+        region_id: 11,
+        fecha_inicio: "2022-06-03 17:55:01",
       },
       {
         cargo: "Maquetador Web Angular",
@@ -113,9 +114,9 @@ Persona.create(
         cant_vacantes: 6,
         salario_min: 600000,
         salario_max: 50000,
-		modalidad_id: 1,
-		region_id: 11,
-        fecha_inicio: "2022-07-02 17:55:01",
+        modalidad_trabajo: "Remoto",
+        region_id: 11,
+        fecha_inicio: "2022-05-02 17:55:01",
       },
       {
         cargo: "Técnico de Apoyo",
@@ -123,30 +124,25 @@ Persona.create(
         cant_vacantes: 8,
         salario_min: 500000,
         salario_max: 700000,
-		modalidad_id: 2,
-		region_id: 11,
-        fecha_inicio: "2022-07-01 17:55:01",
-      }
-
-    ]
-  )
-
-5.times do
-  Oferta.create(
-    [
+        modalidad_trabajo: "Remoto",
+        region_id: 11,
+        fecha_inicio: "2022-04-01 17:55:01",
+      },
       {
         cargo: "Diseñador",
         descripcion: "Se buscan front-end developer para realizar interfaces moviles a tiempo completo.",
         cant_vacantes: 5,
         salario_min: 350000,
         salario_max: 550000,
-		modalidad_id: 2,
-		region_id: 11,
-        fecha_inicio: "2022-06-30 17:55:01",
-      },
+        modalidad_trabajo: "Mixto",
+        region_id: 11,
+        fecha_inicio: "2022-03-30 17:55:01",
+      }
 
     ]
   )
+
+
 end
 
 puts "finalizado!!!"

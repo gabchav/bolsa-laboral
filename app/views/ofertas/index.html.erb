@@ -1,16 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Ofertas Laborales</h1>
+<br><h1 class="ofer">Ofertas Laborales</h1><br>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Cargo</th>
-      <th>Descripción</th>
-      <th>Vacantes</th>
-      <th>Rango de Salario</th>
-      <th>Fecha inicio</th>
-      <th>Modalidad</th>
+      <th>CARGO</th>
+      <th>DESCRIPCIÓN</th>
+      <th>VACANTES</th>
+      <th>RANGO DE SALARIO</th>
+      <th>FECHA DE INICIO</th>
+      <th>MODALIDAD</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,7 +21,7 @@
         <td><%= oferta.cant_vacantes %></td>
         <td>Entre $<%= oferta.salario_min %> a $<%= oferta.salario_max %> CLP.</td>
         <td><%= oferta.fecha_inicio %></td>
-        <td><%= oferta.modalidad_id %></td>
+        <td><%= oferta.modalidad_trabajo %></td>
         <% if empresa_signed_in? %>
         <td><%= link_to "Ver", oferta, class: "btn btn-outline-dark" %></td>
         <td><%= link_to "Editar", edit_oferta_path(oferta), class: "btn btn-outline-dark" %></td>
@@ -39,4 +37,7 @@
 <br>
 <%= paginate @ofertas %>
 <br>
+<% if empresa_signed_in? %>
+<%= link_to "Nueva Oferta", new_oferta_path, class: "btn btn-outline-dark" %>
+<% end %>
 <%= link_to "Volver", :back, class: "btn btn-outline-dark" %>

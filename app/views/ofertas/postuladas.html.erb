@@ -2,41 +2,37 @@
     <div class="row">
         <div class="col-12">
 <br>
-  <%= form_with url: "/ofertas/search", method: :get do |form| %>
-        <% if empresa_signed_in? %>
-        <%= form.label :query, "Buscar Ofertas Publicadas:" %>
-        <% else %>
-        <%= form.label :query, "Buscar Ofertas Laborales:" %>
-        <% end %>
+  <%= form_with url: "/ofertas/postula", method: :get do |form| %>
+        <%= form.label :query, "Buscar Mis Postulaciones:" %>
         <%= form.text_field :query %>
         <%= form.submit "Buscar" %>
     <% end %>
 
-    <% if @search %>
+    <% if @postula %>
 
     <p>
         <strong>Cargo:</strong>
-        <%= @search.cargo %>
+        <%= @postula.cargo %>
     </p>
 
     <p>
         <strong>Descripción:</strong>
-        <%= @search.descripcion %>
+        <%= @postula.descripcion %>
     </p>
 
     <p>
         <strong>Vacantes:</strong>
-        <%= @search.cant_vacantes %>
+        <%= @postula.cant_vacantes %>
     </p>
 
     <p>
         <strong>Salario:</strong>
-        Entre $<%= @search.salario_min %> a $<%= @search.salario_max %> CLP.
+        Entre $<%= @postula.salario_min %> a $<%= @postula.salario_max %> CLP.
     </p>
 
     <p>
         <strong>Fecha de Inicio:</strong>
-        <%= @search.fecha_inicio %>
+        <%= @postula.fecha_inicio %>
     </p>
     <% else %>
     <%= "***Ningun dato encontrado***" %>

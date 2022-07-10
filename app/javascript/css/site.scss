@@ -1,15 +1,22 @@
-$primary: rebeccapurple;
-$danger: #dd0000;
+
+$primary: #46b053;
+$danger: #ff6347;
 $success: lime;
 $warning: orange;
 $info: aqua;
+$dark: #388c42;
 
-$body-bg: #f3f3f0;
+$body-bg: #f0f0f3;
 
 @import "~bootstrap/scss/bootstrap.scss";
 
-h1 { font-style: oblique; color: rgb(6, 105, 170);
-}
+.ofer { text-align: center;
+        }
 
-h2 { font-style: oblique; color: rgb(6, 105, 170);
-}
+h1 { font-style: oblique; color: #388c42;
+    }
+
+h2 { font-style: oblique; color: #388c42;
+    }
+
+#reservado { text-align: center; color: #46b053}
