@@ -18,7 +18,7 @@
                 <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Buscar Ofertas Creadas", search_ofertas_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Crear Nueva Oferta", new_oferta_path, class: "btn btn-outline-dark" %>
-                <%= link_to "Cerrar Sesión", destroy_empresa_session_path, method: :delete, class: "btn btn-outline-dark" %>
+                <%= link_to "Salir", destroy_empresa_session_path, method: :delete, class: "btn btn-outline-dark" %>
             </div>
         <% elsif persona_signed_in? %>
             <div style="text-align:right">
