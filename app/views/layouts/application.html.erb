@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_pack_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
     <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
   </head>
@@ -14,31 +13,32 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <% if empresa_signed_in? %>
-            <div>
+            <div style="text-align:right">
                 <p>Bienvenid@ <%= current_empresa.representante.upcase %> de <%= current_empresa.razon_social.upcase %>!!</p>
-                
                 <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Buscar Ofertas Creadas", search_ofertas_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Crear Nueva Oferta", new_oferta_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Cerrar Sesión", destroy_empresa_session_path, method: :delete, class: "btn btn-outline-dark" %>
             </div>
         <% elsif persona_signed_in? %>
-            <div>
-                <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %>
-                <%= link_to "Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %>
+            <div style="text-align:right">
+                <p>Bienvenid@ <%= current_persona.nombre.upcase %>!!</p>
+                <%= link_to "Ver Ofertas Laborales", root_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Mi Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Mis Postulaciones", postuladas_ofertas_path, class: "btn btn-outline-dark" %> 
-                <%= link_to "Cerrar Sesión", destroy_persona_session_path, method: :delete, class: "btn btn-outline-dark" %>
+                <%= link_to "Salir", destroy_persona_session_path, method: :delete, class: "btn btn-outline-dark" %>
             </div>
         <% else %>
-        <div>
+        <div style="text-align:right">
                 <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %>
-                <%= link_to "Registar Empresa", new_empresa_registration_path, class: "btn btn-outline-dark" %> 
-                <%= link_to "Registar Persona", new_persona_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Buscar Oferta", search_ofertas_path, class: "btn btn-outline-dark" %>
+                <%= link_to "Registro de Empresa", new_empresa_registration_path, class: "btn btn-outline-dark" %> 
+                <%= link_to "Registro de Persona", new_persona_registration_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Login Empresa", new_empresa_session_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Login Persona", new_persona_session_path, class: "btn btn-outline-dark" %>
-                <%= link_to "Buscar", search_ofertas_path, class: "btn btn-outline-dark" %>
             </div>
         <% end %>
     <%= yield %>
-	<div id="reservado"><br>&copy; Todos los Derechos Reservados • 2022 • Joselis Briceño</div>
+	<div id="reservado"><br>&copy; Gabriel Ch&aacute;vez • 2022<br></div>
   </body>
 </html>

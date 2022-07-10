@@ -37,7 +37,5 @@
 <br>
 <%= paginate @ofertas %>
 <br>
-<% if empresa_signed_in? %>
-<%= link_to "Nueva Oferta", new_oferta_path, class: "btn btn-outline-dark" %>
-<% end %>
 <%= link_to "Volver", :back, class: "btn btn-outline-dark" %>
+<br>
