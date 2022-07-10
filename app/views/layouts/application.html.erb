@@ -14,7 +14,7 @@
     <p class="alert"><%= alert %></p>
     <% if empresa_signed_in? %>
             <div style="text-align:right">
-                <p>Bienvenid@ <%= current_empresa.representante.upcase %> de <%= current_empresa.razon_social.upcase %>!!</p>
+                <p>Bienvenid@ <b><%= current_empresa.representante.upcase %></b> de <b><%= current_empresa.razon_social.upcase %></b>!!</p>
                 <%= link_to "Inicio", root_path, class: "btn btn-outline-dark" %> 
                 <%= link_to "Buscar Ofertas Creadas", search_ofertas_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Crear Nueva Oferta", new_oferta_path, class: "btn btn-outline-dark" %>
@@ -22,7 +22,7 @@
             </div>
         <% elsif persona_signed_in? %>
             <div style="text-align:right">
-                <p>Bienvenid@ !!</p>
+                <p>Bienvenid@ <b><%= current_persona.nombre.upcase %></b>!!</p>
                 <%= link_to "Ver Ofertas Laborales", root_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Mi Perfil", edit_persona_registration_path, class: "btn btn-outline-dark" %>
                 <%= link_to "Mis Postulaciones", postuladas_ofertas_path, class: "btn btn-outline-dark" %> 
@@ -39,6 +39,7 @@
             </div>
         <% end %>
     <%= yield %>
-	<div id="reservado"><br>&copy; Gabriel Ch&aacute;vez • 2022<br></div>
+    <br>
+	<div class="derechos"><br>&copy; Gabriel Ch&aacute;vez • 2022<br></div>
   </body>
 </html>
